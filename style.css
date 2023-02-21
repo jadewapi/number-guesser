@@ -1,0 +1,516 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: rgb(124, 124, 124);
+    background-image: linear-gradient(
+    to right,
+    hsl(90deg 86% 54%) 0%,
+    hsl(97deg 88% 75%) 69%,
+    hsl(105deg 91% 96%) 100%
+    );
+    animation: gradient 1s ease infinite;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Unbounded';
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    }
+
+main {
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.05), rgba(255,255,255,0.3));
+    border-radius: 12px 60px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4.4px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 95%;
+    height: 90%;
+    display: flex;
+}
+
+.game {
+    width: 60%;
+    height: 100%;
+}
+
+.topGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    /* background-color: blanchedalmond; */
+    position: relative;
+    border-bottom: 12px solid black;
+}
+
+h1 {
+    font-size: 4.5vw;
+}
+
+.mysteryNumber {
+    font-size: 5vw;
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgb(14, 112, 56); */
+    /* color: rgb(0, 0, 0); */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 0em 1em;
+}
+
+.bottomGame {
+    /* background-color: rgb(120, 120, 255); */
+    width: 100%;
+    padding-top:10vh;
+    height: 50%;
+    font-size: 1rem;
+    display: flex;
+}
+
+.bottomGameLeft {
+    width: 50%;
+}
+
+.guess {
+    display: block;
+    width: 70%;
+    height: 40%;
+    margin: 0 auto;
+    border: none;
+    font-family: inherit;
+    font-size: 6.5vw;
+    text-align: center;
+    border-bottom: 5px solid black;    
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px 24px 0 0;
+}
+
+.guess::placeholder{
+    opacity: 10%;
+}
+
+.check {
+    display: block;
+    width: 70%;
+    height: 25%;
+    margin: 0 auto;
+    border: none;
+    font-family: 'Unbounded';
+    font-size: 3.5vw;
+    background: rgb(255, 255, 255, 0.7);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 24px 24px;
+}
+
+.bottomGameRight {
+    width: 50%;
+}
+
+/* scoreSpan and highScoreSpan */
+p > span {
+    /* background-color: white; */
+    padding: 0em .5em;
+}
+
+.bottomGameRight > p {
+    font-size: 2vw;
+    margin-bottom: 4vh;
+}
+
+.status {
+    word-wrap: break-word;
+}
+
+.tryAgainButton {
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(14, 112, 56); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tryAgain {
+    border: none;
+    font-family: inherit;
+    height: 50%;
+    width: 40%;
+    font-size: 3vw;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+}
+
+/******************/
+/** leaderboards **/
+/******************/
+.leaderboards {
+    width: 40%;
+    height: 100%;
+    /* background-color: rgb(255, 192, 44); */
+    position: relative;
+}
+
+.putName {
+    visibility: hidden;
+    position: absolute;
+    /* background-color: rgb(185, 11, 11); */
+    /* width: 100%;
+    height: 100%; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.congrats, .noName {
+    display: block;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.userInputName {
+    border: none;
+    width: 80%;
+    height: 10%;
+    font-size: 3vw;
+    font-family: inherit;
+    text-align: center;
+    text-align: center;
+    border-bottom: 5px solid black;    
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px 24px 0 0;
+}
+
+.userInputName::placeholder{
+    opacity: 20%;
+}
+
+.submit {
+    border: none;
+    font-family: inherit;
+    width: 30%;
+    height: 10%;
+    font-size: 3.5vw;
+    width: 80%;
+    background: rgb(255, 255, 255, 0.8);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 2vh;
+}
+
+.mainGame {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(14, 112, 56); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.highest, .recent {
+    border: none;
+    font-family: inherit;
+    width: 40%;
+    height: 50%;
+    font-size: 2vw;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+}
+
+.displayUsers {
+    height: 75%;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.pContainer {
+    font-size: 1.2vw;
+    margin: auto;
+    display: flex;
+    width: 90%;
+    height: 5%;
+}
+
+.pRank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.pName {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pScore {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo {
+    display: flex;
+    width: 90%;
+    height: 6rem;
+    background-color: white;
+    margin: 1vh auto;
+    font-size: 2vw;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+}
+
+.userRank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    overflow-x: scroll;
+}
+
+.userName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    width: 60%;
+}
+
+.userScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    width: 20%;
+}
+
+@media screen and (max-width: 1023px) {
+    h1 {
+        text-align: center;
+        font-size: 5.25vw;
+    }
+    .topGame {
+        border-bottom: 10px solid black;
+    }
+    .mysteryNumber{
+        font-size: 5.5vw;
+    }
+    .bottomGameRight > p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .mysteryNumber{
+        font-size: 7vw;
+    }
+    h1 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .guess {
+        height: 30%;
+    }
+    .check{
+        height: 15%;
+    }
+    .highest, .recent {
+        font-size: 2.5vw;
+    }
+    .congrats, .noName {
+        font-size: 2vw;
+    }
+    .userInputName{
+        font-size: 5vw;
+    }
+    .submit {
+        font-size: 4vw;
+        width: 60%;
+        height: 10%;
+    }
+    .pContainer {
+        font-size: 1.5vw;
+    }
+    .submit {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 8vw;
+    }
+    .mysteryNumber{
+        font-size: 9vw;
+    }
+    .tryAgain {
+        font-size: 5vw;
+        width: 60%;
+    }
+    nav {
+        flex-direction: column;
+    }
+    .highest, .recent {
+        height: 30%;
+        width: 80%;
+        font-size: 4vw;
+    }
+    .congrats {
+        font-size: 3vw;
+    }
+    .userInputName{
+        font-size: 6vw;
+    }
+    .bottomGameRight > p {
+        font-size: 2.8vw;
+    }
+    .congrats, .noName {
+        font-size: 3vw;
+    }
+    .userInputName {
+        font-size: 3.5vw;
+    }
+    .submit {
+        width: 80%;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    main {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    h1 {
+        font-size: 12vw;
+    }
+    .bottomGame {
+        padding-top: 12vh;
+    }
+    .mysteryNumber {
+        font-size: 15vw;
+    }
+    .guess {
+        font-size: 13vw;
+        border-bottom: 3px solid black;
+    }
+    .check {
+        font-size: 7vw;
+    }
+    .bottomGameRight > p {
+        font-size: 4.5vw
+    }
+    .game, .leaderboards{
+        width: 100%;
+    }
+    nav {
+        padding: 5vh 0;
+    }
+    .highest {
+        margin-bottom: 3vh;
+    }
+    .highest, .recent {
+        height: 50%;
+        font-size: 4.5vw;
+    }
+    li > div {
+        font-size: 4vw;
+    }
+    main {
+        border-radius: 80px;
+    }
+    .pContainer {
+        font-size: 2vw;
+    }
+    .putName {
+        height: 100%;
+        width: 100%;
+    }
+    .userInputName{
+        font-size: 10vw;
+    }
+    .submit {
+        font-size: 10vw;
+    }
+    .congrats, .noName {
+        font-size: 4vw;
+    }
+
+}
+
+button:hover {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+button:active {
+    outline: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:focus {
+    border: 3px solid rgb(0, 0, 0)
+}

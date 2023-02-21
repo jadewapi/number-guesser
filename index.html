@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&family=Unbounded:wght@500&display=swap" rel="stylesheet">
+    <title>Jade Pineda</title>
+</head>
+<body>
+    <main>
+        <article class="game">
+            <section class="topGame">
+                <h1>Guess My Number!</h1>
+                <div class="mysteryNumber">?</div>
+            </section>
+            <section class="bottomGame">
+                <div class="bottomGameLeft">
+                    <input type="text" class="guess" placeholder="1-20">
+                    <button class="check">Check!</button>
+                </div>
+                <div class="bottomGameRight">
+                    <p class="status">Enter any number from 1 to 20</p>
+                    <p class="score">Score: <span class="scoreSpan">20</span></p>
+                    <p class="highScore">High Score: <span class="highScoreSpan">20</span></p>
+                </div>
+            </section>
+            <section class="tryAgainButton">
+                <button class="tryAgain">Try Again!</button>            
+            </section>
+        </article>
+        <aside class="leaderboards">
+            <div class="putName">
+                <p class="congrats">Congrats! Please Put Your Name</p>
+                <input type="text" class="userInputName" placeholder="Enter Name" value="">
+                <button class="submit">Submit!</button>
+                <p class="noName">Name cannot be empty</p>
+            </div>
+            <section class="mainGame">
+                <nav>
+                    <button class="highest" type="button">Highest!</button>
+                    <button class="recent" type="button">Recent</button>
+                </nav>
+                <div class="pContainer">
+                    <p class="pRank">Rank</p>
+                    <p class="pName">Name</p>
+                    <p class="pScore">Score</p>
+                </div>
+                <ul class="displayUsers">
+                </ul>
+            </section>
+        </aside>
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
+
