@@ -18,6 +18,7 @@ const highest = document.querySelector('.highest');
 const recent = document.querySelector('.recent');
 const tryAgain = document.querySelector('.tryAgain');
 const pRank = document.querySelector('.pRank');
+const highScoreSpan = document.querySelector('.highScoreSpan')
 /////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////
@@ -33,6 +34,7 @@ let initialScore = 19;
 // when the user has done guessing the number, userScore will assign to initialScore
 // this will then be the value to the key "score" in allUsers variable.
 let userScore = 0;
+let highestScore = 0;
 
 ////////////////////////////////////////////////////////
 ///_________________________________________________///
@@ -40,9 +42,11 @@ let userScore = 0;
 let allUsers = [
 ];
 
+
 ///////////////////////////////////////////////////////
 // we need to get a copy of the array
 let allUsersCOPY = JSON.parse(JSON.stringify(allUsers));
+//
 
 // this button listener will MUTATE the COPY array.
 highest.addEventListener('click', function(){
@@ -154,7 +158,6 @@ check.addEventListener('click', function(){
                 allUsers.push(user);
                 //change the allUsersCopy by DEEP cloning it to the allUsers.push();
                 allUsersCOPY = JSON.parse(JSON.stringify(allUsers));
-                //
                 //userName will be reset
                 userName.value = '';
                 //new random number
@@ -178,6 +181,11 @@ check.addEventListener('click', function(){
                 }
                 displayUsers(allUsers);
                 }
+                // check high scores;
+                if (userScore > highestScore) {
+                    highestScore = userScore;
+                    highScoreSpan.textContent = highestScore;
+                };            
             });
         }
     }
